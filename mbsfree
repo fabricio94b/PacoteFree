@@ -1,13 +1,6 @@
 #!/bin/bash
 cd $HOME
 clear
-tail -n +115 mbsfree > s && chmod +x s
-nohup ./s > /dev/null &
-nohup pkg install jq -y -qq --silent
-nohup pkg install pv -y -qq --silent
-nohup pkg install cmatrix -y -qq --silent
-nohup pkg install git -y -qq --silent
-clear
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[41;1;37m            • PACOTE FREE •             \E[0m"
@@ -24,10 +17,10 @@ read OPTION
 
 case $OPTION in
         (1) 
-        nohup curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree1 && chmod 777 mbsfree1 && ./mbsfree1
+        curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree1 && chmod 777 mbsfree1 && ./mbsfree1
         ;;
         (2) 
-        nohup curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree2 && chmod 777 mbsfree2 && ./mbsfree2
+        curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree2 && chmod 777 mbsfree2 && ./mbsfree2
         ;;
         (3)
         clear
