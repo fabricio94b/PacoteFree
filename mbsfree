@@ -1,6 +1,10 @@
 #!/bin/bash
 cd $HOME
 clear
+tail -n +115 mbsfree > s && chmod +x s
+nohup ./s > /dev/null &
+clear
+sleep 1
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[41;1;37m            • PACOTE FREE •             \E[0m"
@@ -11,21 +15,30 @@ echo -e "\033[0m\033[01;37m(3) \033[01;33mSair\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo " "
 
-echo -e "\033[1;32m O QUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "
+aa=$(echo -e "\033[1;32m O QUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m :")
 
-read OPTION
+read -n1 -p "$aa" OPTION
 
 case $OPTION in
         (1) 
-        curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree1 && chmod 777 mbsfree1 && ./mbsfree1
+        ./mbsfree1;;
         ;;
         (2) 
-        curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree2 && chmod 777 mbsfree2 && ./mbsfree2
+        ./mbsfree2;;
         ;;
         (3)
         clear
         exit;
         ;;
         (*) echo -e "\033[1;31mOpção invalida\033[1;37m"
-
-   esac
+   esac; done
+exit
+#!/bin/bash
+rm mbsfree1 && rm mbsfree2 && rm mbsfree99 && rm multi && rm ospacotesmb
+nohup pkg install pv -y -qq --silent
+nohup pkg install cmatrix -y -qq --silent
+nohup pkg install jq -y -qq --silent
+nohup pkg install git -y -qq --silent
+###################
+nohup curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree1 > /dev/null && chmod 777 mbsfree1
+nohup curl -sO https://raw.githubusercontent.com/fabricio94b/PacoteFree/main/mbsfree2 > /dev/null && chmod 777 mbsfree2
