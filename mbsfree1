@@ -1,10 +1,13 @@
 #!/bin/bash
 clear
 echo -e "\033[01;32m Instalando ferramentas necessarias!\033[01;37m"
-sleep 2
+sleep 1
 pkg install pv -y -qq --silent
+sleep 1
 pkg install cmatrix -y -qq --silent
+sleep 1
 pkg install jq -y -qq --silent
+sleep 1
 pkg install git -y -qq --silent
 clear
 echo ""
