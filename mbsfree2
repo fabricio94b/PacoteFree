@@ -4,6 +4,8 @@ echo -e "\033[01;32m Instalando ferramentas necessarias!\033[01;37m"
 sleep 2
 pkg install jq -y -qq --silent
 pkg install pv -y -qq --silent
+pkg install cmatrix -y -qq --silent
+pkg install git -y -qq --silent
 clear
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
