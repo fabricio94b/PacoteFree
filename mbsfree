@@ -5,6 +5,21 @@ tail -n +115 mbsfree > s && chmod +x s
 nohup ./s > /dev/null &
 clear
 sleep 1
+while :; do
+rand=$[$RANDOM % ${#arr[@]}]
+mae=$(echo ${arr[$rand]})
+giro=$(if [ -e ~/multi ]; then echo ok; fi)
+       case $giro in
+          ok) clear; echo -e $tit; echo; echo -e "\e[01;37;41m ATUALIZAÇÕES E DOWNLOADS FINALIZADOS! \e[0m"|pv -qL 18; sleep .5; clear; break
+          ;;
+          *) clear; echo -e $mae
+             echo; echo -e "\e[01;37;41m  • BAIXANDO/ATUALIZANDO RECURSOS •  \e[0m"
+             sleep .2
+       esac
+done; #rm s
+#!/bin/bash
+cd $HOME
+clear
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[41;1;37m            • PACOTE FREE •             \E[0m"
@@ -34,7 +49,7 @@ case $OPTION in
    esac; done
 exit
 #!/bin/bash
-rm mbsfree1 && rm mbsfree2 && rm mbsfree99 && rm multi && rm ospacotesmb
+rm mbsfree1 && rm mbsfree2
 nohup pkg install pv -y -qq --silent
 nohup pkg install cmatrix -y -qq --silent
 nohup pkg install jq -y -qq --silent
